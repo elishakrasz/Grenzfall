@@ -1,0 +1,39 @@
+<div *ngIf="display && item.image_data" class="image">
+  <div class="item-image">
+      <button class="btn btn-block">
+        <span class="block-button">Item Image</span>
+      </button>
+  </div>
+  <div>
+      <img src="data:image/png;base64,{{item.image_data}}">
+  </div>
+</div>
+
+<div class="entity-body" style="color: #FAF9F5;">
+  <button class="btn btn-success btn-block" (click)="Toggle.emit($event)">
+    <clr-icon *ngIf="!display; else other_content" shape="image" class="is-solid" size="26"></clr-icon>
+    <ng-template #other_content><clr-icon shape="image" size="26"></clr-icon></ng-template>Item: {{ item.item_no}}
+  </button>
+  <table class="table">
+    <tbody>
+        <div class="over1">
+            <tr class="over">
+                <td [froalaEditor]="titleOptions" [(froalaModel)]="item.sub_items[0].entity_html"></td>
+            </tr>
+            <tr class="fill2"></tr>
+        </div>
+    </tbody>
+  </table>
+  <table class="table">
+
+      <tbody>
+
+          <tr *ngFor="let entity of item.sub_items | slice:1; let i = index;" >
+              <td class="first"><b>({{ i+1 }})</b></td>
+              <td class="entity second" [froalaEditor]="titleOptions" [(froalaModel)]="entity.entity_html"></td>
+          </tr>
+          <tr>
+          </tr>
+      </tbody>
+  </table>
+</div>

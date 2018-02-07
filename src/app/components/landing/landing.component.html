@@ -1,0 +1,14 @@
+<div class="login-wrapper">
+  <form class="login">
+      <label class="title">
+          <h3 class="welcome">Welcome to the</h3>
+          National Intstitute for Testing and Evaluation
+          <h5 class="hint">Please enter a valid question number below</h5>
+      </label>
+      <div class="login-group">
+          <!-- <input class="username" type="text" id="login_username" placeholder="Username"> -->
+          <input class="question_id" type="number" id="question_id" name="question_id" placeholder="Question Id..." [(ngModel)]="route">
+          <button class="btn btn-primary" (click)=navigate()>Submit</button>
+      </div>
+  </form>
+</div>

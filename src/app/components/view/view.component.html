@@ -1,0 +1,15 @@
+<div class="fill"></div>
+
+<app-parent-item *ngIf=parentItem
+  [parentItem]="parentItem"
+  [titleOptions]="titleOptions"
+  [parentDisplay]="parentDisplay"
+  (click)="parentToggle($event)"
+  ></app-parent-item>
+
+<app-item
+  [item]="item"
+  [titleOptions]="titleOptions"
+  [display]="display"
+  (click)="Toggle($event)"
+></app-item>

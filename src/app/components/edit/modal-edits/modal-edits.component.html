@@ -1,0 +1,33 @@
+<div class="modals">
+  <clr-modal [(clrModalOpen)]="basicReset" [clrModalSize]="'sm'">
+      <h3 class="modal-title">Reset Current Item</h3>
+      <div class="modal-body">
+          <p>This is action will erase all current changes</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-outline" (click)="basicReset = false">Cancel</button>
+          <button type="button" class="btn btn-primary" (click)="itemReset.emit($event); event.stopPropagation();">Ok</button>
+      </div>
+  </clr-modal>
+  <clr-modal [(clrModalOpen)]="basicDelete">
+      <h3 class="modal-title">Delete Current Item</h3>
+      <div class="modal-body">
+          <p>This is action will erase all current changes</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-outline" (click)="basicDelete = false">Cancel</button>
+          <button type="button" class="btn btn-primary" (click)="deleteItem.emit(item); $event.stopPropagation();">Ok</button>
+      </div>
+  </clr-modal>
+  <clr-modal [(clrModalOpen)]="basicSave" [clrModalSize]="'sm'">
+      <h3 class="modal-title">Save Current Item</h3>
+      <div class="modal-body">
+          <p>This is action will erase all current changes</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-outline" (click)="basicSave = false">Cancel</button>
+          <button type="button" class="btn btn-primary" (click)="updateItem.emit(item); $event.stopPropagation();">Ok</button>
+      </div>
+  </clr-modal>
+
+</div>

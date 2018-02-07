@@ -1,0 +1,23 @@
+<div class="alert alert-app-level">
+  ...
+</div>
+<header class="header-6">
+  <div class="branding">
+    <a routerLink='/' class="nav-link">
+      <clr-icon shape="home" class="is-inverse" size="36"></clr-icon>
+      <span class="title">המרכז הארצי לבחינות ולהערכה - הבחינה הפסיכומטרית - בחינות להתנסות</span>
+    </a>
+  </div>
+  <form (keydown)="keyDownFunction($event)">
+      <input style="color: #ffffff;" type="number" [(ngModel)]="routeNumber" name="question_id" placeholder="Enter a Question Id..."/>
+  </form>
+
+  <div class="header-actions">
+    <a routerLink='/item/ + {routerNumber}' class="nav-link nav-icon">
+      <clr-icon shape="cog"></clr-icon>
+    </a>
+  </div>
+</header>
+<nav class="subnav">
+  ...
+</nav>

@@ -1,0 +1,29 @@
+<div class="fill"></div>
+
+<app-parent-item *ngIf=parentItem
+  [parentItem]="parentItem"
+  [titleOptions]="titleOptions"
+  [parentDisplay]="parentDisplay"
+  (click)="parentToggle($event)"
+  ></app-parent-item>
+<app-item
+  [item]="item"
+  [titleOptions]="titleOptions"
+  [display]="display"
+  (click)="Toggle($event)"
+></app-item>
+
+<app-edit-buttons
+  (click)="openSave($event)"
+  (click)="openDelete($event)"
+  (click)="openReset($event)"
+  ></app-edit-buttons>
+
+<app-modal-edits
+  [basicSave]="basicSave"
+  [basicDelete]="basicDelete"
+  [basicReset]="basicReset"
+  (click)="deleteItem(item)"
+  (click)="updateItem(item)"
+  (click)="itemReset($event)"
+  ></app-modal-edits>
